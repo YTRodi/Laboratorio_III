@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tablas</title>
+		<link rel="stylesheet" href="./css/estilos.css" />
+	</head>
+	<body>
+		<h2>Horarios de la facu</h2>
+
+		<table>
+			<caption>
+				Horarios de la facu
+			</caption>
+			<colgroup>
+				<!--Cada etiqueta col va a representar a cada columna de la tabla.-->
+				<!-- <col />
+				<col />
+				<col /> -->
+				<col span="4" />
+				<!--Para evitar las repeticiones-->
+				<col style="background-color: darkgreen" />
+			</colgroup>
+
+			<!-- 3 Etiquetas fundamentales: Etiquetas semánticas -->
+			<thead>
+				<!-- tr: Table row -->
+				<tr>
+					<th>Lunes</th>
+					<th>Martes</th>
+					<th>Miércoles</th>
+					<th>Jueves</th>
+					<th>Viernes</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td rowspan="2">Prog III</td>
+					<td>Labo III</td>
+					<td>Contable</td>
+					<td>Inglés</td>
+					<td>Matemática</td>
+				</tr>
+				<tr>
+					<!-- <td>Prog III</td> -->
+					<td>Bases de datos</td>
+					<td>Contable</td>
+					<td>Inglés</td>
+					<td>Matemática</td>
+				</tr>
+
+				<tr>
+					<td colspan="5">Recreo</td>
+					<!--Le digo el ancho que quiero que se expanda-->
+				</tr>
+
+				<tr>
+					<td>Prog III</td>
+					<td>Labo III</td>
+					<td>Contable</td>
+					<td>Inglés</td>
+					<td>Matemática</td>
+				</tr>
+				<tr>
+					<td>Prog III</td>
+					<td>Labo III</td>
+					<td>Contable</td>
+					<td>Inglés</td>
+					<td>Matemática</td>
+				</tr>
+			</tbody>
+
+			<tfoot>
+				<td>Rampi</td>
+				<td>Baus</td>
+				<td>Mutti</td>
+				<td>Villegas</td>
+				<td>Scarafilo</td>
+			</tfoot>
+		</table>
+	</body>
+</html>

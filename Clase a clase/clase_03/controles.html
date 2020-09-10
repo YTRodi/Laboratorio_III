@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Clase 03</title>
+	</head>
+	<body>
+		<form>
+			<fieldset>
+				<legend>Datos Personales</legend>
+
+				<label for="">Nombre</label>
+				<input type="text" name="" id="" placeholder="Ingrese su nombre" />
+
+				<br /><br />
+
+				<label for="">Apellido</label>
+				<input type="text" name="" id="" placeholder="Ingrese su apellido" />
+			</fieldset>
+			<br />
+			<br />
+			<input type="range" name="" id="" />
+			<br />
+			<br />
+			<input type="number" min="0" max="10" name="" id="" value="5" />
+			<br />
+			<br />
+			<input type="password" name="" id="" />
+			<br />
+			<br />
+			<!-- <input type="email" name="" id="" required /> -->
+			<input type="email" name="email-usuario" id="" />
+			<br />
+			<br />
+			<input type="color" name="" id="" />
+			<br />
+			<br />
+			<input type="file" name="" id="" />
+			<br />
+			<br />
+			<input type="date" name="" id="" />
+			<br />
+			<br />
+			<input type="reset" />
+			<br />
+			<br />
+			<select name="pais" id="">
+				<optgroup label="America">
+					<option value="ar">Argentina</option>
+					<option value="cl" selected>Chile</option>
+					<option value="br">Brasil</option>
+				</optgroup>
+
+				<optgroup label="Europa">
+					<option value="es">España</option>
+					<option value="it">Italia</option>
+					<option value="de">Alemania</option>
+				</optgroup>
+			</select>
+			<br />
+			<br />
+			<!-- CHECKBOX (checked, disabled (Atributos))-->
+			<!-- Del lado del servidor la data va a llegar por el atributo value -->
+			<input type="checkbox" name="" id="" checked />C# <br />
+			<input type="checkbox" name="" id="" disabled />Java <br />
+			<input type="checkbox" name="" id="" value="c" />C <br />
+			<br />
+			<br />
+
+			<!-- RADIO (radiobutton-->
+			<fieldset>
+				<legend>Genero</legend>
+				<!-- Tengo que ponerle el mismo name a los 3 para que me deje deschequearlo -->
+				<input value="mas" type="radio" name="gender-user" id="" />Masculino <br />
+				<input value="fem" type="radio" name="gender-user" id="" />Femenino <br />
+				<input value="ind" type="radio" name="gender-user" id="" />Prefiero no decirlo <br />
+			</fieldset>
+			<br />
+			<br />
+			<!-- TEXTAREA -->
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+			<input type="submit" />
+			<br />
+			<br />
+		</form>
+	</body>
+</html>
