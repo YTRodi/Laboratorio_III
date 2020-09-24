@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Funciones constructoras, prototipicas</title>
+	</head>
+	<body>
+		<script>
+
+            // //Funciones constructoras = lowCamelCase
+            // function Persona( nombre, edad ) {
+
+            //     // this.nombre = nombre;
+            //     // this.edad = edad;
+            //     this.nombre = nombre || 'Sin nombre';
+            //     this.edad = edad || -1;
+            //     // this.saludar = function() {
+
+            //     //     console.log( `Hola me llamo ${ this.nombre }` );
+
+            //     // }
+                
+            // }
+
+            // //La dif que cada vez que construya una persona con la funcion constructora Persona voy a tener en copia completa... 2:20:00 video pt1 22/09/2020
+            // Persona.prototype.saludar = function() {
+
+            //     console.log( `Hola me llamo ${ this.nombre }` );
+
+            // }
+
+
+            // const per1 = new Persona( 'Maggie', 6 );
+            // const per2 = new Persona( 'Yago', 22 );
+            // console.log(per1);
+            // console.log(per2);
+            // per1.saludar();
+            // per2.saludar();
+
+
+            // //typeof => OPERADOR UNARIO
+            // console.log(typeof per1);
+            // //intanceof => OPERADOR BINARIO (porque tiene algo antes y algo después)
+            // console.log(per1 instanceof Persona);
+
+            //------------------------------------------------
+            //------------------------------------------------
+            //HERENCIA!!!!!!!!!!!
+            function Persona( nombre, edad ) {
+
+                this.nombre = nombre || 'Sin nombre';
+                this.edad = edad || -1;
+                
+            }
+
+            Persona.prototype.saludar = function() {
+
+                console.log( `Hola me llamo ${ this.nombre }` );
+
+            }
+
+            function Empleado( nombre, edad, sueldo ) {
+
+                this.sueldo = sueldo;
+                // this.super = Persona; //Atributo de instancia que es igual a Persona. (Apunta al constructor de persona).
+                this.super = Persona.call(this, nombre, edad);
+                // this.super( nombre, edad );
+
+            }
+
+            Empleado.prototype = new Persona(); //El constructor del Empleado sea el de Persona (HERENCIA).
+
+            const emp1 = new Empleado( 'Yago', 22, 35000 );
+
+            function informarEdad() {
+
+                console.log(this.edad);
+
+            }
+
+            informarEdad.call(emp1);
+            // console.log(emp1);
+
+            function EmpleadoEspecializado( nombre, edad, sueldo, especialidad ) {
+
+                this.especialidad = especialidad || 'Inutil';
+                this.super = Empleado;
+                this.super( nombre, edad, sueldo );
+
+            }
+
+            EmpleadoEspecializado.prototype = new Empleado();
+
+            const emp2 = new EmpleadoEspecializado( 'José', 45, 70000, 'Solador');
+
+            console.log(emp2);
+            console.log(emp2 instanceof Persona);
+
+            function Jefe( nombre, edad, apellido ) {
+
+                this.apellido = apellido;
+                this.super = Persona;
+                this.super( nombre, edad );
+
+            }
+
+            Jefe.prototype = new Persona();
+
+            const jefe1 = new Jefe( 'Felipe', 43, 'Gusmán' );
+            console.log( jefe1 instanceof Persona );// true
+            console.log( jefe1 instanceof EmpleadoEspecializado );// false
+
+        </script>
+	</body>
+</html>

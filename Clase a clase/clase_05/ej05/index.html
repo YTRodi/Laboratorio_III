@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Objetos</title>
+	</head>
+	<body>
+		<script>
+
+			const array = [];
+			const unaPersona = {
+            
+				nombre: "Yago",
+				apellido: "Rodi",
+                edad: 22,
+                hobbies: [ 'Cubo Rubik', 'CS:GO' ],
+                redesSociales: {
+
+                    twitter: '@YTRodi',
+                    facebook: 'ytr@gmail.com',
+                    instagram: 'YTR'
+
+                },
+                saludar: function() {
+
+                    //back tick ``
+                    console.log(`Hola me llamo ${ this.nombre } y tengo ${ this.edad } años.`);
+
+                }
+                
+			};
+            const obj2 = new Object();
+            
+            console.log(unaPersona);
+            unaPersona.saludar();
+
+            //FOR IN
+
+
+
+            //DEVUELVEN ARRAYS
+            console.log(Object.keys(unaPersona));
+            console.log(Object.values(unaPersona));
+            console.log(unaPersona.hasOwnProperty('nombre'));
+            
+
+
+
+
+            //IIFE (Función autoinvocada)
+            // (function() {
+
+            //     console.log('Soy una función IIFE');
+
+            // })();
+
+            //---------------------------------------------
+            //---------------------------------------------
+
+            function x() {
+
+                
+            }
+
+            const p1 = new x();
+
+            console.log(p1);
+            </script>
+	</body>
+</html>

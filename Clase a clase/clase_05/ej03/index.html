@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arguments</title>
+</head>
+<body>
+    <script>
+
+        const array1 = [ 1, 2, 3, 4 ];
+
+        function sumar( a, b ) {
+
+            console.log(arguments);
+
+        }
+        // NO funciona con array function
+        // const sumar = ( a, b ) => {
+
+        //     console.log(arguments);
+
+        // }
+
+        sumar( 1, 2 );
+        sumar( array1 );
+        sumar( ...array1 ); // Con el spread Operator le paso como parámetro todos los elementos del array.
+
+
+    </script>
+</body>
+</html>

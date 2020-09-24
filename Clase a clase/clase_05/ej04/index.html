@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Destructuración</title>
+	</head>
+	<body>
+		<script>
+			/*
+                Destructuración
+            */
+			//----------------------------------
+			//----------------------------------
+			// Objetos
+			const persona = {
+
+				nombre: "Juan",
+				edad: 20
+
+			};
+
+			//No importa el orden de los atributos mientras coincidan con el atributo.
+			let { nombre, edad } = persona;
+
+			console.log( nombre, edad );
+
+			//----------------------------------
+			//----------------------------------
+			// Arrays
+			const array1 = [ 1, 2, 3 ];
+
+			const [ x, y, z, k] = array1;
+
+			console.log( x, y, z, k);
+
+
+			
+		</script>
+	</body>
+</html>

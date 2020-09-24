@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+<body>
+    <script>
+        /* Operador de propagación */
+
+        let array1 = [ 1, 2, 3, 4, 5 ];
+        // let array2 = [ ...array1 ]; // Nos carga en el array 2 los elementos del array 1.
+        let array2 = [ 10, 15, 17, 50, 100 ];
+        let array3 = [ array1, array2 ];
+        let array4 = [ ...array1, ...array2 ]; // Formamos un único array cons los elementos del 1 y del 2.
+
+        array1.push(50);
+
+        console.log(array1);
+        console.log(array2);
+        console.log(array3);
+        console.log(array4);
+
+        // Parámetros REST (parámetro formal)
+        // Si vienen dos parámetros los voy a almacenar en 'c' que es una array.
+        function sumar ( a, b, ...c ) {
+            
+            let resultado = a + b;
+            console.log(c); // Array(3) [ 4, 5, 10 ]
+            c.forEach( ( x ) => {
+                resultado += x;
+            });
+
+            return resultado;
+
+        }
+
+        console.log( sumar( 2, 4 ) );
+        console.log( sumar( 2, 4, 4, 5, 10 ) );
+
+    </script>
+</body>
+</html>

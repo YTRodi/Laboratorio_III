@@ -1,0 +1,157 @@
+/* Etiqueta que engloba todo el contenido de la página */
+* {
+	margin: 0;
+	box-sizing: border-box; /* Lo que ocupa realmente la caja en la página. */
+	/* font-family: Ranchers; */
+}
+
+/* 1ro Selector de etiqueta (Orden en lo que vimos en la clase) */
+/* Agregando con ',' vamos agrupando las etiquetas que queramos que tengan el mismo estilo. */
+p,
+h1 {
+	background-color: rgb(108, 69, 129);
+}
+
+/* 2ro Selector por clase (Orden en lo que vimos en la clase) */
+/* Es más específico que el 1ro, tiene más prioriedad. */
+.green {
+	background-color: green;
+}
+
+/* 2ro Selector por id (Orden en lo que vimos en la clase) */
+/* Es más específico que el 1ro, tiene más prioriedad. */
+#miParrafo {
+	background-color: red;
+}
+
+p:hover,
+#miParrafo:hover {
+	background-color: rgb(253, 185, 39);
+}
+
+/* ----------------------------------------------------------- */
+/* A todos a que tenga como atributo "href", que tenga como value "Google" */
+/* a[href*="google"] { */
+/* text-decoration: none; */
+/* } */
+
+/* A todos los <a> que están dentro de los <div>  */
+/* div a {
+	text-decoration: none;
+	color: blue;
+} */
+
+/* Hijo directo de <div> */
+/* div > a {
+
+} */
+
+/* ----------------------------------------------------------- */
+/* html {
+	font-size: 32px;
+} */
+
+p {
+	/* text-transform: capitalize; */
+
+	/* BOX MODEL! agrego border-box */
+
+	width: 200px;
+	height: 200px;
+
+	/* 1em = 16px */
+	/* font-size: 1em; */
+	/* Hace referencia al elemento root del HTML (rem) */
+	/* font-size: 1rem; */
+	/* font-size: 5vw; */
+
+	/* padding: 20px; */
+	/* padding: 10px 30px;*/ /* ShortHand*/
+	padding-top: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 50px;
+
+	border: 5px solid blue; /* ShortHand*/
+	/* border-width: 5px;
+	border-style: solid;
+    border-color: blue; */
+
+	margin: 30px;
+	margin-left: -30px;
+	transition: margin-left 1.5s, background-color 2s;
+}
+
+p::first-letter {
+	/* PSEUDO ELEMENTO (::)*/
+	text-transform: capitalize;
+}
+
+p:hover {
+	/* PSEUDO CLASE (:)*/
+	background-color: rgb(253, 185, 39);
+	margin-left: 0px;
+}
+
+/* #miParrafo {
+	width: 200;
+	height: 200;
+	background: red;
+	transition: width 2s, height 2s;
+}
+
+#miParrafo:hover {
+	width: 300px;
+	height: 300px;
+} */
+
+div {
+	/* Viewport width (Ancho)*/
+	/* width: 100vw; */
+	/* Viewport height (Alto) Toda la pantalla visible*/
+	/* height: 100vh; */
+	/* background-color: indianred; */
+}
+
+/* div {
+	width: 600px;
+	height: 600px;
+	background-color: indianred;
+	background-image: url(../img/anuncio1.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover; No tiene sentido tener el repeat
+} */
+
+/* ----------------------------------------------------------- */
+/* ----------------------------------------------------------- */
+
+li {
+	list-style-type: none;
+	background-color: black;
+	display: inline;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	margin-right: 15px;
+}
+
+li:hover {
+	transition: 0.5s;
+	background-color: red;
+}
+
+li a {
+	text-decoration: none;
+	color: white;
+}
+
+/* AGREGO FONT FAMILY */
+@font-face {
+	font-family: "Ranchers";
+	src: url(../fonts/Ranchers-Regular.ttf);
+}
+
+/* ----------------------------------------------------------- */
+/* ----------------------------------------------------------- */
+/* cdn: es un repositorio donde podemos consumir librerias de terceros. Incluir código de terceros*/

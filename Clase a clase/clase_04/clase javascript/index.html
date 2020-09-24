@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			let pepe;
+			console.log(pepe);
+			// var pepe; //undefined
+			// let pepe; //Cannot access 'pepe' before initialization
+
+			//---------------------------------------------
+
+			//Ámbito global
+			var aaa = 20;
+			if (true) {
+				//NO tiene ámbito
+				var aaa = 40;
+			}
+			console.log(aaa);
+			console.log(window); //Scope global
+
+			//---------------------------------------------
+
+			var y = 20;
+			function f1() {
+				var y = 50;
+			}
+			console.log(y);
+
+			//---------------------------------------------
+			let vector = [];
+			console.log(vector);
+
+			const vectorConstante = [1, "Pepe", [1, 2, 3], { nombre: "Yago" }]; //Tipo de dato por ref
+			vectorConstante.push(34);
+			vectorConstante.push(123);
+			vectorConstante.push("hola");
+			console.log(vectorConstante);
+
+			const x = vectorConstante;
+			console.log(x);
+		</script>
+	</body>
+</html>
