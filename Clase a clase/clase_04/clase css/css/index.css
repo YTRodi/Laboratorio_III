@@ -18,7 +18,7 @@ h1 {
 	background-color: green;
 }
 
-/* 2ro Selector por id (Orden en lo que vimos en la clase) */
+/* 3ro Selector por id (Orden en lo que vimos en la clase) */
 /* Es más específico que el 1ro, tiene más prioriedad. */
 #miParrafo {
 	background-color: red;

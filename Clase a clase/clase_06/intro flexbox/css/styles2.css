@@ -1,0 +1,22 @@
+.contenido {
+    color: white;
+    background-color: green;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+div:nth-of-type(3) {
+    background-color: red;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 800px;
+    align-items: center;
+    /* align-content: colapsa las dos row/column flexibles */
+    align-content: center;
+}

@@ -1,0 +1,78 @@
+/* IMPORTANTE:
+    MODELO => MOBILE FIRST 
+*/
+
+/* HEADER es el contenedor del logo y el nav */
+header {    
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    background-color: cadetblue;
+    /* Top y bottom: 10px // Left y right 20px */
+    padding: 10px 20px;
+    border: 1px solid cyan;
+    border-radius: 5px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+nav li {
+    margin: 10px 10px;
+}
+
+.importante {
+    background-color: yellow;
+    border: 1px dashed red;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+}
+
+/* MAIN */
+main {
+    background-color: tomato;
+}
+
+section {
+    /* Contenedor de articulos */
+    display: flex;
+    flex-wrap: wrap;
+    /* Como estoy en el mismo eje */
+    justify-content: space-evenly;
+}
+
+article {
+    background-color: yellowgreen;
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+/* ASIDE */
+aside {
+    /* Si estás en un celular no se va a mostrar el aside. */
+    display: none;
+}
+
+/* FOOTER */
+footer {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p {
+    color: white;
+}

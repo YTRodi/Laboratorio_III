@@ -1,0 +1,30 @@
+.contenido {
+    background-color: green;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+div:nth-of-type(1) {
+    position: relative;
+    left: 100px;
+}
+
+div:nth-of-type(2) {
+    position: absolute;
+    left: 300px;
+}
+
+div:nth-of-type(4) {
+    position: fixed;
+}
+
+div:nth-of-type(5) {
+    /* El div 4 se mete dentro del div 5 (Queda por detrás) */
+    position: sticky;
+}
+
+/* De par en par. */
+div:nth-of-type(even) {
+    background-color: red;
+}
