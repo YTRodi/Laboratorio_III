@@ -8,6 +8,9 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    position: sticky;
+    top: 0;
 }
 
 nav a {
@@ -39,6 +42,11 @@ nav li {
 }
 
 /* MAIN */
+.principal {
+    /* Contiene el main y los articulos */
+    display: flex;
+}
+
 main {
     background-color: tomato;
 }
@@ -59,10 +67,18 @@ article {
     margin-bottom: 10px;
 }
 
+article p {
+    height: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 50%;
+}
+
 /* ASIDE */
 aside {
     /* Si estás en un celular no se va a mostrar el aside. */
     display: none;
+    background-color: turquoise;
 }
 
 /* FOOTER */
@@ -75,4 +91,21 @@ footer {
 
 footer p {
     color: white;
+}
+
+/* MEDIA QUERYS */
+/* Nos movemos desde lo más chico a lo más grande */
+@media ( min-width: 800px ) {
+    header, footer {    
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    aside {
+        display: block;
+        /* Ocupa un porcentaje del contenedor flexible */
+        flex-basis: 30%;
+    }
+
+    
 }
