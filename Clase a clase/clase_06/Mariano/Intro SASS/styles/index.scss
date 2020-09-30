@@ -1,0 +1,41 @@
+@import "colors";
+@import "mixin";
+
+div {
+    background-color: $back_color;
+    // border: $border_type;
+    @include mx_bordes(); //por defecto 1px
+    @include mx_bordes( 5px ); //por defecto 1px
+}
+
+div {
+    &.importante {
+        background-color: $back_color;
+    }
+}
+
+//Por clase
+.miDiv {
+
+    // Puedo heredar las propiedades de 'div'
+    @extend div;
+    width: 100px;
+
+}
+
+//NESTING (anidamiento)
+// header {
+//     // &.importante {
+//     //     // Los header que tengan clase 'importante'
+//     //     background-color: $back_color;
+//     // }
+//     nav {
+//         ul {
+//             li {
+//                 a {
+//                     color: $link_color;
+//                 }
+//             }
+//         }
+//     }
+// }

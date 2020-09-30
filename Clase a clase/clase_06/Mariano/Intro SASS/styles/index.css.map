@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,GAAG,EAcH,MAAM,CAdF;EACA,gBAAgB,ECJR,GAAG;ECGX,MAAM,EAFe,GAAG,CAET,KAAK,CAAC,KAAK;EAA1B,MAAM,EFIc,GAAG,CEJR,KAAK,CAAC,KAAK;CFK7B;;AAED,AACI,GADD,AACE,WAAW,EAAX,WAAW,AAMhB,MAAM,CANW;EACT,gBAAgB,ECZZ,GAAG;CDaV;;AAIL,AAAA,MAAM,CAAC;EAIH,KAAK,EAAE,KAAK;CAEf",
+    "sources": [
+        "index.scss",
+        "_colors.scss",
+        "_mixin.scss"
+    ],
+    "names": [],
+    "file": "index.css"
+}

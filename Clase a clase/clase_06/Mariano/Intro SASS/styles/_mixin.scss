@@ -1,0 +1,6 @@
+//Funciones (en SASS se llama Mixin)
+@mixin mx_bordes( $width:1px ) { //Valor por defecto 1px
+
+    border: $width solid black;
+
+}
