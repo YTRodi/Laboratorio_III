@@ -1,0 +1,21 @@
+.container {
+    /* Para que se centre el contenido */
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+#idTabla {
+
+}

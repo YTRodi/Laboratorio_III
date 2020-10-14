@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/main.js" defer type="module"></script>
+    <title>Práctica parcial</title>
+</head>
+<body>
+    <section class="container" id="dataIn">
+        <form action="">
+            <label>
+                Nombre:<input type="text" id="txtNombre" required>
+            </label>
+            <br><br>
+            <label>
+                Apellido:<input type="text" id="txtApellido" required>
+            </label>
+            <br><br>
+            <label>
+                Email:<input type="email" id="txtEmail" required>
+            </label>
+            <br><br>
+            <fieldset>
+                <legend>Genero</legend>
+                <label for="rdoM">
+                    <input type="radio" name="gender" id="rdoM" value="Male" checked>Masculino
+                </label>
+                <br><br>
+                <label for="rdoF">
+                    <input type="radio" name="gender" id="rdoF" value="Female">Femenino
+                </label>
+            </fieldset>
+            <br><br>
+        </form>
+    </section>
+
+    <button id="btnTabla">Cargar tabla</button>
+
+    <section class="container">
+        <div id="divTabla">
+
+        </div>
+    </section>
+</body>
+</html>
