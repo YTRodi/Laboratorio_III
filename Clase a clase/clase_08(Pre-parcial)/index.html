@@ -11,15 +11,15 @@
     <section class="container" id="dataIn">
         <form action="">
             <label>
-                Nombre:<input type="text" id="txtNombre" required>
+                Nombre:<input type="text" id="txtNombre" name="nombre" required>
             </label>
             <br><br>
             <label>
-                Apellido:<input type="text" id="txtApellido" required>
+                Apellido:<input type="text" id="txtApellido" name="apellido" required>
             </label>
             <br><br>
             <label>
-                Email:<input type="email" id="txtEmail" required>
+                Email:<input type="email" id="txtEmail" name="email" required>
             </label>
             <br><br>
             <fieldset>
@@ -32,11 +32,10 @@
                     <input type="radio" name="gender" id="rdoF" value="Female">Femenino
                 </label>
             </fieldset>
-            <br><br>
+            <br>
+            <button>Alta persona</button>
         </form>
     </section>
-
-    <button id="btnTabla">Cargar tabla</button>
 
     <section class="container">
         <div id="divTabla">

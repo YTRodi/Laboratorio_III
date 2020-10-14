@@ -8,8 +8,6 @@ const crearTabla = ( lista ) => {
     return tabla;
 };
 
-export default crearTabla;
-
 const crearCabecera = ( item ) => {
 
     const tHead = document.createElement( 'thead' );
@@ -61,7 +59,9 @@ const crearCuerpo = ( lista ) => {
             tr.dataset.id = element[ 'id' ];
 
         } else {
+
             console.log( 'El elemento no tiene la propiedad "id".' );
+            
         }
 
         //Le agrego el manejador del evento.
@@ -102,3 +102,11 @@ const agregarManejadorTR = ( tr ) => {
     }
 
 }
+
+// ? EXPORTO POR DEFAULT!!!!
+// ? EXPORTO POR DEFAULT!!!!
+
+export default crearTabla;
+
+// ? EXPORTO POR DEFAULT!!!!
+// ? EXPORTO POR DEFAULT!!!!
