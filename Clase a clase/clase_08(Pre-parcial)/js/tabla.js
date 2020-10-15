@@ -48,6 +48,8 @@ const crearCuerpo = ( lista ) => {
 
         }
 
+        console.log(element.id);
+
         if( element.hasOwnProperty( 'id' ) ) { // Si el elemento tiene la propiedad 'id'
 
             // #1
@@ -77,12 +79,10 @@ const crearCuerpo = ( lista ) => {
 
 const agregarManejadorTR = ( tr ) => {
 
-    // Objetivo: mostrar el id.
-    
+   
     // null es un falsy.
     if( tr ) { // si tr es != de null...
 
-        // 3er parámetro en addEventListener es...
         tr.addEventListener( 'click', ( e ) => {
 
             // e.target va a ser el tr
@@ -91,9 +91,11 @@ const agregarManejadorTR = ( tr ) => {
 
             // console.log(e.target);
 
+            
             // #2
-            console.log(e);
-            alert( e.path[1].dataset.id );
+            // console.log( e );
+            console.log( e.path[1].dataset.id ); // Me da el id.
+            // alert( e.path[1].dataset.id );
 
         });
 

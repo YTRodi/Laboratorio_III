@@ -9,6 +9,9 @@ export default class Persona {
         this.gender = gender;
         
     }
+
+    //Getters y setters
+
     //funcion: alta, baja, modificar, etc
 
 }

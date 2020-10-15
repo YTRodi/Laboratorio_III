@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-    <script src="./js/main.js" defer type="module"></script>
+    <script src="./js/main.js" type="module"></script>
     <title>Práctica parcial</title>
 </head>
 <body>
     <section class="container" id="dataIn">
-        <form action="">
+        <form id="form-principal" action="">
             <label>
                 Nombre:<input type="text" id="txtNombre" name="nombre" required>
             </label>
@@ -25,15 +25,19 @@
             <fieldset>
                 <legend>Genero</legend>
                 <label for="rdoM">
-                    <input type="radio" name="gender" id="rdoM" value="Male" checked>Masculino
+                    <input type="radio" id="rdoM" name="gender" value="Male" checked>Masculino
                 </label>
                 <br><br>
                 <label for="rdoF">
-                    <input type="radio" name="gender" id="rdoF" value="Female">Femenino
+                    <input type="radio" id="rdoF" name="gender" value="Female">Femenino
                 </label>
             </fieldset>
             <br>
             <button>Alta persona</button>
+            <button>Baja persona</button>
+            <br>
+            <br>
+
         </form>
     </section>
 
