@@ -48,7 +48,7 @@ const crearCuerpo = ( lista ) => {
 
         }
 
-        console.log(element.id);
+        // console.log(element.id);
 
         if( element.hasOwnProperty( 'id' ) ) { // Si el elemento tiene la propiedad 'id'
 
@@ -67,7 +67,7 @@ const crearCuerpo = ( lista ) => {
         }
 
         //Le agrego el manejador del evento.
-        agregarManejadorTR( tr );
+        agregarManejadorTR( tr, lista );
 
         tBody.appendChild( tr );
 
@@ -77,33 +77,65 @@ const crearCuerpo = ( lista ) => {
 
 };
 
-const agregarManejadorTR = ( tr ) => {
+const agregarManejadorTR = ( tr, lista ) => {
+    
+    let idPersonaSeleccionada;
 
-   
+    
     // null es un falsy.
     if( tr ) { // si tr es != de null...
-
+        
         tr.addEventListener( 'click', ( e ) => {
 
-            // e.target va a ser el tr
-            // #1
-            // alert(e.target.getAttribute( 'data-id' ));
+            e.preventDefault();
 
-            // console.log(e.target);
+            idPersonaSeleccionada = parseInt( e.path[1].dataset.id );
 
-            
-            // #2
-            // console.log( e );
-            console.log( e.path[1].dataset.id ); // Me da el id.
-            // alert( e.path[1].dataset.id );
+            cargarDatosForm( lista, idPersonaSeleccionada );
+            // tr.classList.add('personaSeleccionada');
 
         });
+
 
     } else {
         console.log( 'tr null' );
     }
 
 }
+
+const cargarDatosForm = ( lista, id ) => {
+
+    const labelId = document.querySelector( '#labelId' );
+    const inputId = document.querySelector( '#txtId' );
+
+    
+    for (const persona of lista) {
+        
+        if( persona.id === id ) {
+            
+            inputId.value = persona.id;
+            document.querySelector( '#txtNombre' ).value = persona.firstName;
+            document.querySelector( '#txtApellido' ).value = persona.lastName;
+            document.querySelector( '#txtEmail' ).value = persona.email;
+            document.forms[0].gender.value = persona.gender;
+
+            // Lógica: Si toco algún tr de la tabla, el botón de alta desaparece, aparece el input del ID, el botón de baja y modificar con todos los datos de la persona seleccionada.
+            document.querySelector( '#btnAlta' ).classList.add( 'desaparecer' );
+
+            labelId.classList.remove( 'desaparecer' );
+            inputId.classList.remove( 'desaparecer' );
+
+            document.querySelector( '#btnBaja' ).classList.remove( 'desaparecer' );
+            document.querySelector( '#btnModif' ).classList.remove( 'desaparecer' );
+
+            break;
+        }
+
+    }
+
+};
+
+
 
 // ? EXPORTO POR DEFAULT!!!!
 // ? EXPORTO POR DEFAULT!!!!

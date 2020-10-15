@@ -16,6 +16,16 @@ table, th, td {
     border: 1px solid black;
 }
 
+/* Clase para ocultar botones */
+.desaparecer {
+    display: none;
+}
+
+.personaSeleccionada {
+    background-color: blueviolet;
+    color: white;
+}
+
 #idTabla {
 
 }

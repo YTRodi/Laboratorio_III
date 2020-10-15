@@ -9,7 +9,11 @@
 </head>
 <body>
     <section class="container" id="dataIn">
-        <form id="form-principal" action="">
+        <form id="form-principal">
+            <label class="desaparecer" id="labelId">
+                ID: <input class="desaparecer" type="text" id="txtId" name="id" disabled>
+            </label>
+            <br><br>
             <label>
                 Nombre:<input type="text" id="txtNombre" name="nombre" required>
             </label>
@@ -33,8 +37,11 @@
                 </label>
             </fieldset>
             <br>
-            <button>Alta persona</button>
-            <button>Baja persona</button>
+            <button id="btnAlta">Alta persona</button>
+            <button class="desaparecer" id="btnBaja">Baja persona</button>
+            <button class="desaparecer" id="btnModif">Modificar persona</button>
+            <button id="btnCancelar">Cancelar</button>
+            <button id="btnLimpiarTabla">Limpiar Tabla</button>
             <br>
             <br>
 
