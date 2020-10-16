@@ -179,17 +179,21 @@ const guardarDatos = () => {
 
 const actualizarLista = () => {
 
-    // while( divTabla.hasChildNodes() ) {
-    //     divTabla.remove
-    //     ChildNode.remove()
-    // }
+    divTabla.textContent = "";
 
-    // setTimeout(() => {
+    const spinner = document.createElement( 'img' );
+    
+    spinner.width = 50;
+    spinner.src = './progress-bar.gif';
+    spinner.alt = 'Spinner para la carga de la tabla.'
+    divTabla.appendChild( spinner );
+
+    setTimeout(() => {
 
         divTabla.textContent = "";
         divTabla.appendChild( crearTabla(lista) );
         
-    // }, 5000);
+    }, 2000);
     
 
 };

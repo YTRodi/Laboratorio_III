@@ -107,7 +107,7 @@ const cargarDatosForm = ( lista, id ) => {
 
     const labelId = document.querySelector( '#labelId' );
     const inputId = document.querySelector( '#txtId' );
-
+    console.log(inputId);
     
     for (const persona of lista) {
         
