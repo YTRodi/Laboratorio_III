@@ -1,21 +1,35 @@
-* {
-    margin: 0;
+:root {
+    --border-radius5: 5px;
+    --color-boton: #333;
+    --color-principal: #30BFF2;
+    --color-secundario:#F23D67;
 }
 
-table {
-    border-collapse: collapse;
-    text-align: center;
+* {
+    margin: 0;
+    box-sizing: border-box;
     letter-spacing: .09em;
 }
 
+/* -------------------------------------------------------- */
+/* TABLA */
+table {
+    border-collapse: collapse;
+    text-align: center;
+}
+
 th {
-    background-color: #3AAFAB;
+    background-color: var( --color-principal );
     text-transform: uppercase;
+}
+
+tr {
+    transition: background-color 0.25s;
 }
 
 tr:hover {
     cursor: pointer;
-    background-color: #333;
+    background-color: var( --color-secundario );
     color: #FFF;
 }
 
@@ -24,15 +38,86 @@ th, td {
 }
 
 table, th, td {
-    border: 1px solid #333;
+    border: 2px solid var( --color-boton );
 }
 
+/* -------------------------------------------------------- */
+/* IMPORTANTE:
+    MODELO => MOBILE FIRST 
+*/
 
+/* HEADER es el contenedor del logo y el nav */
+header, footer {    
+    width: 100%;
+    background-color: var( --color-principal );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+nav a {
+    color: white;
+    text-decoration: none;
+    background-color: var( --color-boton );
+    /* Top y bottom: 10px // Left y right 20px */
+    padding: 8px 16px;
+    border-radius: var( --border-radius5 );
+    transition: background-color 0.25s;
+    text-transform: uppercase;
+    font-size: 0.7em;
+}
+
+nav a:hover {
+    cursor: pointer;
+    color: #FFF;
+    background-color: var( --color-secundario );
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+nav li {
+    margin: 10px 10px;
+}
+
+/* FOOTER */
+footer p {
+    color: white;
+    font-weight: bold;
+}
+
+/* MEDIA QUERYS */
+/* Nos movemos desde lo más chico a lo más grande */
+@media ( min-width: 800px ) {
+    header, footer {    
+        flex-direction: row;
+        justify-content: space-between;
+        height: 60px;
+    }
+}
+
+/* -------------------------------------------------------- */
 /* FORMULARIO */
 body {
     font: normal 18px/1.5 "Fira Sans", "Helvetica Neue", sans-serif;
-    padding: 50px 0;
+    /* padding: 50px 0; */
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+main {
+    /* El contenido principal va a tener un factor de crecimiento 1, osea que es más que los demás ( que por default es 0 ) */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
 }
 
 .container {
@@ -41,10 +126,6 @@ body {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-.container *{
-    box-sizing: border-box;
 }
 
 .flex-outer,
@@ -78,7 +159,6 @@ body {
 .flex-outer li p {
     padding: 8px;
     font-weight: 300;
-    letter-spacing: .09em;
     text-transform: uppercase;
 }
 
@@ -102,8 +182,8 @@ body {
 .flex-outer li input:not([type='radio']) {
     padding: 10px;
     /* border: none; */
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: var( --border-radius5 );
+    font-size: 0.7em;
 }
 
 .flex-outer li button {
@@ -113,30 +193,23 @@ body {
     background: #333;
     color: #FFF;
     text-transform: uppercase;
-    letter-spacing: .09em;
-    border-radius: 5px;
+    border-radius: var( --border-radius5 );
     transition: background-color 0.25s;
 }
 
 .flex-outer li button:hover {
     cursor: pointer;
-    background-color: #3AAFAB;
+    background-color: var( --color-secundario );
 }
 
 .flex-inner li {
     width: 150px;
-    letter-spacing: .09em;
 }
 
-
+/* -------------------------------------------------------- */
 /* Clase para ocultar botones */
 .desaparecer {
     display: none;
-}
-
-.personaSeleccionada {
-    background-color: blueviolet;
-    color: white;
 }
 
 #form-principal {

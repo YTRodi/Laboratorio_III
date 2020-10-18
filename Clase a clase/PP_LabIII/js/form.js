@@ -1,5 +1,6 @@
 import Persona from "./personas.js";
 import { obtenerId } from "./localstorage.js";
+import { validarString } from "./validaciones.js";
 
 // ------ Controles Formulario ------
 
@@ -26,13 +27,21 @@ export const botonLimpiarTabla = document.querySelector( '#btnLimpiarTabla' );
 export const obtenerPersona = () => {
 
     const nuevaPersona = new Persona( obtenerId(),
-                                      txtNombre.value,
-                                      txtApellido.value,
+                                      validarString( txtNombre.value ),
+                                      validarString( txtApellido.value ),
                                       txtEmail.value,
                                       rdoGender.value);
-        //radioButton: Como la etiqueta tiene 'value', ya lo recupero más fácil. (Male o Female)
+    //radioButton: Como la etiqueta tiene 'value', ya lo recupero más fácil. (Male o Female)
 
-    return nuevaPersona;
+    if ( nuevaPersona.firstName && nuevaPersona.lastName ) {
+
+        return nuevaPersona;
+
+    } else {
+
+        throw new Error( `El nombre y/o apellido no pueden ser números.` );
+
+    }
 
 }
 

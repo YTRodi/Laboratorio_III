@@ -3,7 +3,7 @@ import { limpiarControles } from "../form.js";
 import { guardarDatos } from "../localstorage.js";
 import { txtId } from "../form.js";
 import { txtNombre, txtApellido, txtEmail, rdoGender } from "../form.js";
-
+import { validarString } from "../validaciones.js";
 // -------- Manejadores --------
 // export const eventHandlerAlta = ( e, lista, proximoId ) => {
 
@@ -64,40 +64,25 @@ export const eventHandlerModificar = ( e, lista, proximoId ) => {
     if ( filtrado ) {
 
 
-        filtrado[0].firstName = txtNombre.value;
-        filtrado[0].lastName = txtApellido.value;
+        filtrado[0].firstName = validarString( txtNombre.value );
+        filtrado[0].lastName = validarString( txtApellido.value );
         filtrado[0].email = txtEmail.value;
         filtrado[0].gender = rdoGender.value;
 
-        guardarDatos( lista, proximoId );
-        actualizarLista( lista );
-        limpiarControles();
-        alert( 'Modificado con éxito!!' );
+        if ( filtrado[0].firstName && filtrado[0].lastName ) {
+        
+            guardarDatos( lista, proximoId );
+            actualizarLista( lista );
+            limpiarControles();
+            alert( 'Modificado con éxito!!' );
+
+        } else {
+            
+            throw new Error( `No se pudo hacer la modificación.\nEl nombre y/o apellido no pueden ser números.\n` );
+
+        }
 
     }
-
-    // if ( confirm( 'Seguro que desea modificar este usuario?' ) ) {
-
-        // for ( let i = 0; i < listaLength; i++ ) {
-
-        //     if( lista[i].id === idPersonaSeleccionada ) {
-
-        //         console.log(lista);
-        //         lista[i].firstName = txtNombre.value;
-        //         lista[i].lastName = txtApellido.value;
-        //         lista[i].email = txtEmail.value;
-        //         lista[i].gender = rdoGender.value;
-        //         guardarDatos( lista, proximoId );
-        //         actualizarLista( lista );
-        //         limpiarControles();
-        //         alert( 'MODIFICADO CON ÉXITO!' );
-        //         break;
-                
-        //     }
-
-        // }   
-    
-    // }   
 
 }
 

@@ -1,6 +1,9 @@
 /* IMPORTANTE:
     MODELO => MOBILE FIRST 
 */
+* {
+    margin: 0;
+}
 
 /* HEADER es el contenedor del logo y el nav */
 header {    

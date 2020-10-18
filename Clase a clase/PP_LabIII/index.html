@@ -5,74 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
     <script src="./js/main.js" type="module"></script>
-    <title>Práctica parcial</title>
+    <title>PP Lab III</title>
 </head>
 <body>
-    <section class="container" id="dataIn">
-        <form id="form-principal">
-            <ul class="flex-outer">
-                <!-- li (Id) -->
-                <li>
-                    <label class="desaparecer" for="txtId" id="labelId">Id</label>
-                    <input class="desaparecer" type="text" name="id" id="txtId" disabled>
-                </li>
 
-                <!-- li (Nombre) -->
-                <li>
-                    <label for="txtNombre">Nombre</label>
-                    <input type="text" name="nombre" id="txtNombre" required placeholder="Ingrese su nombre">
-                </li>
+    <header>
+        <img src="./logo.svg" alt="Logo Bienes Raices">
 
-                <!-- li (Apellido) -->
-                <li>
-                    <label for="txtApellido">Apellido</label>
-                    <input type="text" name="apellido" id="txtApellido" required placeholder="Ingrese su apellido">
-                </li>
-
-                <!-- li (Email) -->
-                <li>
-                    <label for="txtEmail">Email</label>
-                    <input type="email" name="email" id="txtEmail" required placeholder="Ingrese su email">
-                </li>
-
-                <!-- li (Genero) -->
-                <li>
-                    <p>Genero</p>
-                    <ul class="flex-inner">
-                        <li>
-                            <input type="radio" name="gender" id="rdoM" value="Male" checked>Masculino
-                        </li>
-                        <li>
-                            <input type="radio" name="gender" id="rdoF" value="Female">Femenino
-                        </li>
-                    </ul>
-                </li>
-
-                <!-- <li>
-                    <label for="txtEmail">Fecha</label>
-                    <input type="date" name="fecha" id="fecha">
-                </li> -->
-
-                <!-- li (Submit) -->
-                <li>
-                    <button id="btnAlta">Alta persona</button>
-                    <button class="desaparecer" id="btnBaja">Baja persona</button>
-                    <button class="desaparecer" id="btnModif">Modificar persona</button>
-                    <button id="btnCancelar">Cancelar</button>
-                    <button id="btnLimpiarTabla">Limpiar Tabla</button>
-                </li>
+        <nav>
+            <ul>
+                <li><a href="">Nosotros</a></li>
+                <li><a href="">Avisos</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Contacto</a></li>
             </ul>
+        </nav>
+    </header>
 
-        </form>
-    </section>
+    <main>
+        <section class="container" id="dataIn">
+            <form id="form-principal">
+                <ul class="flex-outer">
+                    <!-- li (Id) -->
+                    <li>
+                        <label class="desaparecer" for="txtId" id="labelId">Id</label>
+                        <input class="desaparecer" type="text" name="id" id="txtId" disabled>
+                    </li>
+    
+                    <!-- li (Nombre) -->
+                    <li>
+                        <label for="txtNombre">Nombre</label>
+                        <input type="text" name="nombre" id="txtNombre" required placeholder="Ingrese su nombre">
+                    </li>
+    
+                    <!-- li (Apellido) -->
+                    <li>
+                        <label for="txtApellido">Apellido</label>
+                        <input type="text" name="apellido" id="txtApellido" required placeholder="Ingrese su apellido">
+                    </li>
+    
+                    <!-- li (Email) -->
+                    <li>
+                        <label for="txtEmail">Email</label>
+                        <input type="email" name="email" id="txtEmail" required placeholder="Ingrese su email">
+                    </li>
+    
+                    <!-- li (Genero) -->
+                    <li>
+                        <p>Genero</p>
+                        <ul class="flex-inner">
+                            <li>
+                                <input type="radio" name="gender" id="rdoM" value="Male" checked>Masculino
+                            </li>
+                            <li>
+                                <input type="radio" name="gender" id="rdoF" value="Female">Femenino
+                            </li>
+                        </ul>
+                    </li>
+    
+                    <!-- <li>
+                        <label for="txtEmail">Fecha</label>
+                        <input type="date" name="fecha" id="fecha">
+                    </li> -->
+    
+                    <!-- li (Submit) -->
+                    <li>
+                        <button id="btnAlta">Alta persona</button>
+                        <button class="desaparecer" id="btnBaja">Baja persona</button>
+                        <button class="desaparecer" id="btnModif">Modificar persona</button>
+                        <button id="btnCancelar">Cancelar</button>
+                        <button id="btnLimpiarTabla">Limpiar Tabla</button>
+                    </li>
+                </ul>
+    
+            </form>
+        </section>
+    
+        <br><br>
+    
+    
+        <section class="container">
+            <div id="divTabla">
+    
+            </div>
+        </section>
+    </main>
+    
 
-    <br><br>
 
+    <footer>
+        <p>
+            Todos los derechos reservados &copy
+        </p>
 
-    <section class="container">
-        <div id="divTabla">
+        <!-- PUEDO AGREGAR REDES SOCIALES... -->
+        <nav>
+            <ul>
+                <li><a href="">Nosotros</a></li>
+                <li><a href="">Avisos</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Contacto</a></li>
+            </ul>
+        </nav>
+    </footer>
 
-        </div>
-    </section>
 </body>
 </html>

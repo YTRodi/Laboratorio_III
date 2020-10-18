@@ -25,7 +25,6 @@ const crearCabecera = ( item ) => {
         const th = document.createElement( 'th' );
         const texto = document.createTextNode( key );
 
-        // th.textContent = texto; Es lo mismo...
         th.appendChild( texto );
         tHead.appendChild(th);
     }
@@ -59,11 +58,6 @@ const crearCuerpo = ( lista ) => {
 
         if( element.hasOwnProperty( 'id' ) ) { // Si el elemento tiene la propiedad 'id'
 
-            // #1
-            // tr.setAttribute( 'data-id', element[ 'id' ] );
-            // console.log(tr);
-            // console.log(element['id']);
-
             // #2
             tr.dataset.id = element[ 'id' ];
 
@@ -88,9 +82,7 @@ const agregarManejadorTR = ( tr, lista ) => {
     
     let idPersonaSeleccionada;
 
-    
-    // null es un falsy.
-    if( tr ) { // si tr es != de null...
+    if( tr ) { 
         
         tr.addEventListener( 'click', ( e ) => {
 
@@ -99,7 +91,6 @@ const agregarManejadorTR = ( tr, lista ) => {
             idPersonaSeleccionada = parseInt( e.path[1].dataset.id );
 
             cargarDatosForm( lista, idPersonaSeleccionada );
-            // tr.classList.add('personaSeleccionada');
 
         });
 
@@ -111,10 +102,6 @@ const agregarManejadorTR = ( tr, lista ) => {
 }
 
 const cargarDatosForm = ( lista, id ) => {
-
-    // const labelId = document.querySelector( '#labelId' );
-    // const inputId = document.querySelector( '#txtId' );
-    // console.log(inputId);
     
     for (const persona of lista) {
         
@@ -137,20 +124,6 @@ const cargarDatosForm = ( lista, id ) => {
 
             console.log( persona );
 
-
-            // document.querySelector( '#txtNombre' ).value = persona.firstName;
-            // document.querySelector( '#txtApellido' ).value = persona.lastName;
-            // document.querySelector( '#txtEmail' ).value = persona.email;
-            // document.forms[0].gender.value = persona.gender;
-
-            // Lógica: Si toco algún tr de la tabla, el botón de alta desaparece, aparece el input del ID ( deshabilitado ), el botón de baja y modificar con todos los datos de la persona seleccionada.
-            // document.querySelector( '#btnAlta' ).classList.add( 'desaparecer' );
-
-            
-
-            // document.querySelector( '#btnBaja' ).classList.remove( 'desaparecer' );
-            // document.querySelector( '#btnModif' ).classList.remove( 'desaparecer' );
-
             break;
         }
 
@@ -159,11 +132,4 @@ const cargarDatosForm = ( lista, id ) => {
 };
 
 
-
-// ? EXPORTO POR DEFAULT!!!!
-// ? EXPORTO POR DEFAULT!!!!
-
 export default crearTabla;
-
-// ? EXPORTO POR DEFAULT!!!!
-// ? EXPORTO POR DEFAULT!!!!

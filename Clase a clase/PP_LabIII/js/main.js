@@ -25,17 +25,27 @@ function initHanlders() {
         // --------------------- ALTA ---------------------
         // VALIDACIONES DE LOS CONTROLES ( txtNombre, txtApellido, txtEmail, radioButton )
     
-        const nuevaPersona = obtenerPersona();
+        try {
+
+            const nuevaPersona = obtenerPersona();
+
+            if( nuevaPersona ) {
     
-        if( nuevaPersona ) {
-    
-            lista.push( nuevaPersona );
-            proximoId++;
-            guardarDatos( lista, proximoId );
-            actualizarLista( lista );
+                lista.push( nuevaPersona );
+                proximoId++;
+                guardarDatos( lista, proximoId );
+                actualizarLista( lista );
+                limpiarControles();
+        
+            }
+            
+        } catch ( error ) {
+            
+            alert( error );
             limpiarControles();
-    
+
         }
+
 
     });
 
@@ -45,14 +55,26 @@ function initHanlders() {
 
 
     // MODIFICAR
-    botonModificar.addEventListener( 'click', ( e ) => { eventHandlerModificar( e, lista, proximoId ) });
+    botonModificar.addEventListener( 'click', ( e ) => {
 
+        try {
+
+            eventHandlerModificar( e, lista, proximoId );
+            
+        } catch (error) {
+            
+            alert( error );
+
+        }
+
+    });
+        
 
     // CANCELAR
-    botonCancelar.addEventListener( 'click', ( e ) => { eventHandlerCancelar( e ) });
+    botonCancelar.addEventListener( 'click', ( e ) => { eventHandlerCancelar( e ); });
 
 
     // LIMPIAR TABLA
-    botonLimpiarTabla.addEventListener( 'click', ( e ) => { eventHandlerLimpiarTabla( e ) });
+    botonLimpiarTabla.addEventListener( 'click', ( e ) => { eventHandlerLimpiarTabla( e ); });
 
 };
