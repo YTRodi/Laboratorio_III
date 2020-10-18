@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    letter-spacing: .09em;
+}
+
+th {
+    background-color: #3AAFAB;
+    text-transform: uppercase;
+}
+
+tr:hover {
+    cursor: pointer;
+    background-color: #333;
+    color: #FFF;
+}
+
+th, td {
+    padding: 7px;
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+
+
+/* FORMULARIO */
+body {
+    font: normal 18px/1.5 "Fira Sans", "Helvetica Neue", sans-serif;
+    padding: 50px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container *{
+    box-sizing: border-box;
+}
+
+.flex-outer,
+.flex-inner {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flex-outer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flex-outer li,
+.flex-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.flex-inner {
+    padding: 0 8px;
+    justify-content: space-between;
+}
+
+.flex-outer > li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.flex-outer li label,
+.flex-outer li p {
+    padding: 8px;
+    font-weight: 300;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.flex-outer > li > label,
+.flex-outer li p {
+    border-radius: 15px;
+    flex: 1 0 120px;
+    max-width: 150px;
+    /* background: #3AAFAB; */
+}
+
+.flex-outer > li > label + *,
+.flex-inner {
+    flex: 1 0 220px;
+}
+
+.flex-outer li p {
+    margin: 0;
+}
+
+.flex-outer li input:not([type='radio']) {
+    padding: 10px;
+    /* border: none; */
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.flex-outer li button {
+    margin: 10px auto;
+    padding: 8px 16px;
+    border: none;
+    background: #333;
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    border-radius: 5px;
+    transition: background-color 0.25s;
+}
+
+.flex-outer li button:hover {
+    cursor: pointer;
+    background-color: #3AAFAB;
+}
+
+.flex-inner li {
+    width: 150px;
+    letter-spacing: .09em;
+}
+
+
+/* Clase para ocultar botones */
+.desaparecer {
+    display: none;
+}
+
+.personaSeleccionada {
+    background-color: blueviolet;
+    color: white;
+}
+
+#form-principal {
+    width: 500px;
+}
