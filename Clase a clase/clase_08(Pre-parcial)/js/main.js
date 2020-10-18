@@ -28,13 +28,9 @@ function inicializarManejadores() {
 
         if( nuevaPersona ) {
 
-            // console.log(nuevaPersona);
             lista.push( nuevaPersona );
             proximoId++;
             guardarDatos();
-            
-            // console.log(lista);
-            // console.log('El próximo id es: ' + proximoId);
 
             // Función 'refrescarTabla() / actualizarTabla()'.
             actualizarLista();
@@ -56,9 +52,7 @@ function inicializarManejadores() {
         let listaLength = lista.length;
         const idPersonaSeleccionada = parseInt( document.querySelector( '#txtId' ).value );  // Obtengo referencia del id de la persona.
 
-        if ( confirm('Seguro que desea eliminar este usuario?') ) { 
-
-            if ( confirm('Seguro seguro seguro que desea ELIMINAR este usuario?') ) { 
+        if ( confirm( 'Seguro que desea eliminar este usuario?' ) ) { 
  
                 for (let i = 0; i < listaLength; i++) {
 
@@ -73,8 +67,6 @@ function inicializarManejadores() {
                     }
                     
                 } 
-
-            }
 
         }
         
@@ -179,22 +171,25 @@ const guardarDatos = () => {
 
 const actualizarLista = () => {
 
-    divTabla.textContent = "";
-
-    const spinner = document.createElement( 'img' );
-    
-    spinner.width = 50;
-    spinner.src = './progress-bar.gif';
-    spinner.alt = 'Spinner para la carga de la tabla.'
-    divTabla.appendChild( spinner );
-
-    setTimeout(() => {
-
+    // Cuando no hay nada en el localStorage, no cargo el spinner ni uso el setTimeout().
+    if(localStorage.length !== 0 ) {
         divTabla.textContent = "";
-        divTabla.appendChild( crearTabla(lista) );
+
+        const spinner = document.createElement( 'img' );
         
-    }, 2000);
-    
+        spinner.width = 50;
+        spinner.src = './progress-bar.gif';
+        spinner.alt = 'Progressbar para la carga de la tabla.'
+        divTabla.appendChild( spinner );
+
+        setTimeout(() => {
+
+            divTabla.textContent = "";
+            divTabla.appendChild( crearTabla(lista) );
+            
+        }, 1500);
+
+    }
 
 };
 
