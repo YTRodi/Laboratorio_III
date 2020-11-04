@@ -1,0 +1,19 @@
+Estados de respuesta HTTP:
+https://developer.mozilla.org/es/docs/Web/HTTP/status
+
+Fake Online API Rest (Jsonplaceholder):
+
+¿Por qué es una API falsa?
+-Podemos pedir recursos
+https://jsonplaceholder.typicode.com/
+
+jsonplaceholder para server:
+https://github.com/typicode/json-server
+
+API Fetch:
+-Trabaja con promesas.
+
+
+
+--crudLocal:
+Todo va adentro de la carpeta public (Archivos estáticos)
