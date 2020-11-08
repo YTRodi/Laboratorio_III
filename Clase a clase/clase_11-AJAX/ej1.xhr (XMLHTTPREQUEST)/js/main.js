@@ -16,6 +16,7 @@ btnTraer.addEventListener( 'click', e => {
             if ( xhr.status >= 200 && xhr.status < 300 ) {
 
                 //Código si salió todo bien, la respuesta viene en la propiedad responseText o responseXML
+                console.log(xhr.responseText); // TEXTO PLANO.
                 let datos = JSON.parse(xhr.responseText);
 
                 //! COMO HACERLO SI SOLAMENTE NECESITO ALGUNOS DATOS, NO TODOS.
@@ -54,7 +55,7 @@ btnTraer.addEventListener( 'click', e => {
             } else { 
 
                 let msg = xhr.statusText || 'Se produjo un error';
-
+                console.log(xhr);
                 console.warn( `Error: ${ xhr.status } - ${ msg }` );
 
             }
