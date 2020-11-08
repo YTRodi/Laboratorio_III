@@ -64,7 +64,7 @@ function modificarPersona() {
     let personaAModificar = {
         "nombre": "Scott",
         "apellido": "Rodi",
-        "email": "maggierodi@gmail.com"
+        "email": "scottrodi@gmail.com"
     };
 
     const xhr = new XMLHttpRequest();

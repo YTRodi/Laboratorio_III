@@ -121,10 +121,54 @@
       "email": "tkersawj@jimdo.com"
     },
     {
-      "nombre": "Maggie",
-      "apellido": "Rodi",
-      "email": "maggierodi@gmail.com",
       "id": 21
+    }
+  ],
+  "mascotas": [
+    {
+      "id": 1,
+      "nombre": "Lucienne",
+      "genero": "Female"
+    },
+    {
+      "id": 2,
+      "nombre": "Kay",
+      "genero": "Female"
+    },
+    {
+      "id": 4,
+      "nombre": "Chaim",
+      "genero": "Male"
+    },
+    {
+      "id": 5,
+      "nombre": "Larina",
+      "genero": "Female"
+    },
+    {
+      "id": 6,
+      "nombre": "Marilin",
+      "genero": "Female"
+    },
+    {
+      "id": 7,
+      "nombre": "Wendie",
+      "genero": "Female"
+    },
+    {
+      "id": 8,
+      "nombre": "Godfry",
+      "genero": "Male"
+    },
+    {
+      "id": 9,
+      "nombre": "Quent",
+      "genero": "Male"
+    },
+    {
+      "id": 10,
+      "nombre": "Drake",
+      "genero": "Male"
     }
   ]
 }
