@@ -10,7 +10,7 @@ btnTraer.addEventListener( 'click', async () => {
     try {
         
         let res = await fetch('https://jsonplaceholder.typicode.com/users'); // Que espere a que termine fetch
-
+        // console.log(res);
         
         if ( !res.ok ) {
             
@@ -23,8 +23,24 @@ btnTraer.addEventListener( 'click', async () => {
         }
 
         let data = await res.json();
+        console.log( data );
 
-        ol.appendChild( crearItems( data ) );
+        const datosMapeados = data.map( dato => {
+
+            return {
+                nombre: dato.name,
+                email: dato.email,
+                direccion: dato.address.street,
+                telefono: dato.phone,
+                nombreCompania: dato.company.name
+            }
+
+        });
+
+        console.log(datosMapeados);
+
+        ol.appendChild( crearItems( datosMapeados ) );
+        // ol.appendChild( crearItems( data ) );
 
     } catch ( err ) {
         
@@ -60,7 +76,8 @@ const crearItems = ( data ) => {
     data.forEach(element => {
         
         const item = document.createElement( 'li' );
-        item.textContent = `${ element.name } ${ element.email }`;
+        // item.textContent = `${ element.name } ${ element.email }`;
+        item.textContent = `${ element.nombre } || ${ element.email } || ${ element.direccion } || ${ element.nombreCompania }`;
 
         fragment.appendChild( item );
 
