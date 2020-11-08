@@ -18,7 +18,38 @@ btnTraer.addEventListener( 'click', e => {
                 //Código si salió todo bien, la respuesta viene en la propiedad responseText o responseXML
                 let datos = JSON.parse(xhr.responseText);
 
-                ol.appendChild( crearItems( datos ) );
+                //! COMO HACERLO SI SOLAMENTE NECESITO ALGUNOS DATOS, NO TODOS.
+                // console.log(datos);
+                const datosMapeados = datos.map( dato => {
+
+                    return {
+                        id: dato.id,
+                        nombre: dato.name,
+                        email: dato.email,
+                        direccion: dato.address.street,
+                        telefono: dato.phone
+                    }
+
+                });
+                // console.log(datosMapeados);
+
+                datosMapeados.forEach( element => {
+                    const li = document.createElement( 'li' );
+
+                    li.textContent = `${ element.id } || ${ element.nombre } || ${ element.email } || ${ element.direccion } || ${ element.telefono }`;
+
+                    ol.appendChild( li );
+                })
+
+
+                // ol.appendChild( crearItems( datos ) );
+                // ol.appendChild( datos.forEach(element => {
+                    
+                //     const liItem = document.createElement( 'li' );
+                //     liItem.textContent = `${ element.name }${ element.email }${ element.address }`;
+
+                //     return liItem;
+                // }));
 
             } else { 
 
