@@ -7,9 +7,10 @@ btnTraer.addEventListener( 'click', e => {
     // LEVANTAR EL SERVIDOR CON EL COMANDO: json-server -w db.json
 
     //! CRUD!
-    traerPersonas();
+    // traerPersonas();
+    // traerUnaPersona( 21 );
 
-    // altaPersona();
+    altaPersona();
     // modificarPersona( 3 );
     // bajaPersona( 16 );
 });
@@ -108,7 +109,7 @@ const modificarPersona = async ( id ) => {
 const altaPersona = async () => {
 
     $spinner.appendChild( crearSpinner() );
-    // $ol.textContent = '';
+    $ol.textContent = '';
 
     try {
         let nuevaPersona = {
@@ -124,9 +125,10 @@ const altaPersona = async () => {
             },
             body: JSON.stringify( nuevaPersona )
         }
+        console.log(options);
 
-        const res = await fetch( 'http://localhost:3000/personas', options );
-        // console.log( res );
+        const res = await fetch( 'http://localhost:3000/personas', options);
+        console.log( res );
 
         if( !res.ok ) {
             
@@ -137,9 +139,8 @@ const altaPersona = async () => {
         const data = await res.json();
         console.log( data );
 
-        setTimeout(() => {
-            console.log( `Estado de la petición: ${ res.statusText } - Código: ${ res.status }` );
-        }, 5000);
+        console.log( `Estado de la petición: ${ res.statusText } - Código: ${ res.status }` );
+        // alert( 'Alta exitosa!' );
         
     } catch ( err ) {
         console.log(err);
@@ -156,6 +157,40 @@ const altaPersona = async () => {
 
 //GET ( por id )
 //HACER... 
+const traerUnaPersona = async ( id ) => {
+
+    $spinner.appendChild( crearSpinner() );
+    $ol.textContent = '';
+
+    try {
+        
+        const res = await fetch( `http://localhost:3000/personas/${ id }` );
+        // console.log( res );
+
+        if( !res.ok ) {
+            
+            let msgError = res.statusText || 'Se produjo un error';
+            throw { status: res.status, statusText: msgError };
+        }
+
+        const data = await res.json();
+        console.log( data );
+
+        // $ol.appendChild( crearItems( data ) );
+
+        
+    } catch ( err ) {
+        console.log(err);
+        console.error( `Estado de la petición: ${ err.status }` );
+        console.error( `Texto del estado: ${ err.statusText }` );
+
+    } finally {
+
+        $spinner.textContent = '';
+
+    }
+    
+}
 
 
 //GET ( todos )
@@ -194,6 +229,8 @@ const traerPersonas = async () => {
     
 }
 
+
+// Functions
 const crearSpinner = () => {
 
     const $img = document.createElement( 'img' );
